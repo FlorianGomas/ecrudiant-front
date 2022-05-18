@@ -1,0 +1,10 @@
+h1 {
+    padding: 1em;
+    background-color: chocolate;
+    color: ghostwhite;
+    margin: 0;
+}
+.menu {
+    margin-top: 0 !important;
+    width: 100% !important;
+}
