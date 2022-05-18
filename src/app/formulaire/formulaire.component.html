@@ -1,1 +1,25 @@
-<p>formulaire works!</p>
+<form [formGroup]="form" (ngSubmit)="envoi()" method="post" class="ui form" id="formAjout">
+    <br>
+    <div class="field">
+        <input type="text" name="firstName" placeholder="Prénom" required="required">
+    </div>
+    <div class="field">
+        <input type="text" name="lastName" placeholder="Nom" required="required">
+    </div>
+    <div class="field">
+        <input type="text" name="birthday" placeholder="Date de naissance" required="required">
+    </div>
+    <div class="field">
+        <input type="email" name="email" placeholder="Adresse email">
+    </div>
+    <div class="field">
+        <input type="text" name="jobTitle" placeholder="Poste en alternance">
+    </div>
+    <div class="field">
+        <input type="text" name="company" placeholder="Entreprise">
+    </div>
+
+    <div class="field">
+        <input type="submit" value="Ajouter">
+    </div>
+</form>

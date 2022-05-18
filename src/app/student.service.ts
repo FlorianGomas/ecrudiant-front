@@ -22,4 +22,8 @@ export class StudentService {
   deleteStudent(id:number): Observable<Object>{
     return this.httpClient.delete(environment.apiUrl + '/students/' + id);
   }
+
+  addStudent(data:FormData): Observable<Object> {
+    return this.httpClient.post<StudentInfo>(environment.apiUrl + '/students',data);
+  }
 }
