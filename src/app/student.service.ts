@@ -15,6 +15,6 @@ export class StudentService {
     return this.httpClient.get<StudentInfo[]>(environment.apiUrl + '/students');
   }
   getStudent(id:number) : Observable<StudentInfo> {
-    return this.httpClient.get<StudentInfo>(environment.apiUrl + '/student/' + id);
+    return this.httpClient.get<StudentInfo>(environment.apiUrl + '/students/' + id);
   }
 }

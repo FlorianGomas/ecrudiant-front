@@ -9,10 +9,9 @@ import { StudentInfo } from '../studentInfo';
   styleUrls: ['./etudiant.component.css']
 })
 export class EtudiantComponent implements OnInit {
-  student:StudentInfo ;
-  constructor(private route:ActivatedRoute, private studentService:StudentService) { 
+  student:StudentInfo;
 
-  }
+  constructor(private route:ActivatedRoute, private studentService:StudentService) {}
 
   ngOnInit(): void {
     const studentId = parseInt(this.route.snapshot.paramMap.get('id')!);
