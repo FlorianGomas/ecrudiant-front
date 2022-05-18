@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { StudentService } from '../student.service';
 import { FormBuilder } from '@angular/forms';
 import { StudentInfo } from '../studentInfo';
@@ -10,30 +10,59 @@ import { StudentInfo } from '../studentInfo';
   styleUrls: ['./formulaire.component.css']
 })
 export class FormulaireComponent implements OnInit {
-  form:FormGroup;
+  studentForm:FormGroup;
+  student = new StudentInfo();
   constructor(public fb: FormBuilder, private studentService:StudentService) { 
-    this.form = this.fb.group({
-      lastName: [''],
-      firstName: [null],
-      birthday: [null],
-      company: [null],
-      jobTitle: [null],
-      email: [null]
+    this.studentForm = fb.group({
+      lastName: new FormControl(),
+      firstName: new FormControl(),
+      birthday: new FormControl(),
+      company: new FormControl(),
+      jobTitle: new FormControl(),
+      email: new FormControl()
     });
+  }
+
+  get lastName(): any {
+    return this.studentForm.get('lastName');
+  }
+
+  get firstName(): any {
+    return this.studentForm.get('firstName');
+  }
+
+  get birthday(): any {
+    return this.studentForm.get('birthday');
+  }
+
+  get email(): any {
+    return this.studentForm.get('email');
+  }
+
+  get company(): any {
+    return this.studentForm.get('company');
+  }
+
+  get jobTitle(): any {
+    return this.studentForm.get('jobTitle');
   }
 
   ngOnInit(): void {
   }
 
-  envoi():void{
-    let formData = new FormData();
-    formData.append('lastName',this.form.get('lastName')?.value);
-    formData.append('firstName', this.form.get('firstName')?.value);
-    formData.append('birthday', this.form.get('birthday')?.value);
-    formData.append('company', this.form.get('company')?.value);
-    formData.append('jobTitle', this.form.get('jobTitle')?.value);
-    formData.append('email', this.form.get('email')?.value);
-
-    this.studentService.addStudent(formData).subscribe;
+  submit(){
+    this.student.firstName = this.studentForm.get('firstName')?.value;
+    this.student.lastName = this.studentForm.get('lastName')?.value;
+    this.student.birthday = this.studentForm.get('birthday')?.value;
+    this.student.company = this.studentForm.get('company')?.value;
+    this.student.jobTitle = this.studentForm.get('jobTitle')?.value;
+    this.student.email = this.studentForm.get('email')?.value;
+    this.studentService.addStudent(this.student).subscribe(
+      (val) =>{
+        console.log("valeur retournee : ", val);
+      },
+      response => {
+          console.log("POST call in error", response);
+      });
   }
 }

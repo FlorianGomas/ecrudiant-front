@@ -1,24 +1,23 @@
-<form [formGroup]="form" (ngSubmit)="envoi()" method="post" class="ui form" id="formAjout">
+<form [formGroup]="studentForm" (ngSubmit)="submit()" method="post" class="ui form" id="formAjout">
     <br>
     <div class="field">
-        <input type="text" name="firstName" placeholder="Prénom" required="required">
+        <input type="text" formControlName="firstName" name="firstName" placeholder="Prénom" required="required">
     </div>
     <div class="field">
-        <input type="text" name="lastName" placeholder="Nom" required="required">
+        <input type="text" formControlName="lastName" name="lastName" placeholder="Nom" required="required">
     </div>
     <div class="field">
-        <input type="text" name="birthday" placeholder="Date de naissance" required="required">
+        <input type="text" formControlName="birthday" name="birthday" placeholder="Date de naissance" required="required">
     </div>
     <div class="field">
-        <input type="email" name="email" placeholder="Adresse email">
+        <input type="email" formControlName="email" name="email" placeholder="Adresse email">
     </div>
     <div class="field">
-        <input type="text" name="jobTitle" placeholder="Poste en alternance">
+        <input  type="text" formControlName="jobTitle" name="jobTitle" placeholder="Poste en alternance">
     </div>
     <div class="field">
-        <input type="text" name="company" placeholder="Entreprise">
+        <input type="text" formControlName="company" name="company" placeholder="Entreprise">
     </div>
-
     <div class="field">
         <input type="submit" value="Ajouter">
     </div>

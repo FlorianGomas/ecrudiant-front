@@ -23,7 +23,8 @@ export class StudentService {
     return this.httpClient.delete(environment.apiUrl + '/students/' + id);
   }
 
-  addStudent(data:FormData): Observable<Object> {
-    return this.httpClient.post<StudentInfo>(environment.apiUrl + '/students',data);
+  addStudent(newStudent:StudentInfo): Observable<any> {
+    const headers = { 'content-type': 'application/json'};  
+    return this.httpClient.post(environment.apiUrl + '/students',newStudent,{'headers': headers});
   }
 }

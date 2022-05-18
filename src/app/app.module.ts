@@ -8,6 +8,7 @@ import { EtudiantComponent } from './etudiant/etudiant.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { RechercheComponent } from './recherche/recherche.component';
 import { CarteComponent } from './carte/carte.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { CarteComponent } from './carte/carte.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
