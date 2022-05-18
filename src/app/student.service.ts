@@ -14,7 +14,12 @@ export class StudentService {
   getStudents() : Observable<StudentInfo[]>{
     return this.httpClient.get<StudentInfo[]>(environment.apiUrl + '/students');
   }
+
   getStudent(id:number) : Observable<StudentInfo> {
     return this.httpClient.get<StudentInfo>(environment.apiUrl + '/students/' + id);
+  }
+
+  deleteStudent(id:number): Observable<Object>{
+    return this.httpClient.delete(environment.apiUrl + '/students/' + id);
   }
 }

@@ -21,4 +21,9 @@ export class CarteComponent implements OnInit {
     )
   }
 
+  deleteButton(id : number){
+    this.studentService.deleteStudent(id).subscribe();
+    this.ngOnInit();
+  }
+
 }

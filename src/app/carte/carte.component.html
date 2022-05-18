@@ -1,6 +1,9 @@
 <div class="ui container">
     <div class="student ui cards">
         <div class="ui link card" *ngFor="let student of students" [routerLink]="['/etudiant', student.id]">
+            <div class="ui right aligned">
+                <button class="ui icon button" (click)="$event.stopPropagation();deleteButton(student.id)"><i class="ui icon trash alternate"></i></button>
+            </div>
             <div class="content">
                 <div class="header">{{student.firstName}} {{student.lastName}}</div>         
             </div>
