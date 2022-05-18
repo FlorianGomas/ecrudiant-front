@@ -1,9 +1,11 @@
-<div class="student ui cards">
-    <div class="ui card" *ngFor="let student of students" [routerLink]="['/student', student.id]">
-        <div class="content">
-            <div class="header">{{student.firstName}} {{student.lastName}}</div>         
+<div class="ui container">
+    <div class="student ui cards">
+        <div class="ui card" *ngFor="let student of students" [routerLink]="['/student', student.id]">
+            <div class="content">
+                <div class="header">{{student.firstName}} {{student.lastName}}</div>         
+            </div>
+            <div class="content">{{student.jobTitle}} chez {{student.company}}</div>
         </div>
-        <div class="content">{{student.jobTitle}} chez {{student.company}}</div>
     </div>
 </div>
 
