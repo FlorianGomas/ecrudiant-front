@@ -14,7 +14,11 @@ export class CarteComponent implements OnInit {
   constructor(private studentService : StudentService) { }
 
   ngOnInit(): void {
-    
+    this.studentService.getStudents().subscribe(
+      response => {
+        this.students = response;
+      }
+    )
   }
 
 }
