@@ -1,0 +1,38 @@
+<div class="ui container">
+    <div class="ui fluid card">
+        <div class="content">
+            <h1>{{student.firstName}} {{student.lastName}}</h1>
+            <form  [formGroup]="studentForm" method="post" class="ui form" id="formModif" (ngSubmit)="submit()">
+                <fieldset>
+                    <legend>Prénom</legend>
+                    <input type="text" id="firstName" formControlName="firstName">
+                </fieldset> 
+                <fieldset>
+                    <legend>Nom</legend>
+                    <input type="text" formControlName="lastName">
+                </fieldset> 
+                <fieldset>
+                    <legend>Date de naissance</legend>
+                    <input type="text" id="birthday" formControlName="birthday">
+                </fieldset>
+                <fieldset>
+                    <legend>Entreprise</legend>
+                    <input type="text" id="company" formControlName="company"> 
+                </fieldset>
+                <fieldset>
+                    <legend>Poste</legend>
+                    <input type="text" id="jobTitle" formControlName="jobTitle">
+                </fieldset>
+                <fieldset>
+                    <legend>Email</legend>
+                    <input type="text" id="email" formControlName="email">
+                </fieldset>
+            </form>
+        </div>    
+    </div>
+    <div class="back-button">
+        <button class="ui icon button" [routerLink]="['/etudiants']">
+            <i class="left arrow icon"></i>
+        </button>
+    </div>
+</div>

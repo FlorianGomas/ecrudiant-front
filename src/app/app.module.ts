@@ -9,6 +9,7 @@ import { FormulaireComponent } from './formulaire/formulaire.component';
 import { RechercheComponent } from './recherche/recherche.component';
 import { CarteComponent } from './carte/carte.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditFormComponent } from './edit-form/edit-form.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EtudiantComponent,
     FormulaireComponent,
     RechercheComponent,
-    CarteComponent
+    CarteComponent,
+    EditFormComponent
   ],
   imports: [
     BrowserModule,
