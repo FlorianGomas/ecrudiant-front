@@ -1,0 +1,10 @@
+.card {
+    transition: 0.3s;
+}
+.card button {
+    opacity: 0;
+}
+
+.card:hover button {
+    opacity: 1;
+}
