@@ -6,14 +6,24 @@
                 <div class="field">
                     <label>Prénom</label>
                     <input type="text" id="firstName" formControlName="firstName">
+                    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+                        <div *ngIf="firstName.errors?.['required']">Le prénom est obligatoire</div>
+                    </div>
                 </div> 
                 <div class="field">
                     <label>Nom</label>
                     <input type="text" formControlName="lastName">
+                    <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+                        <div *ngIf="lastName.errors?.['required']">Le nom est obligatoire</div>
+                    </div>
                 </div> 
                 <div class="field">
                     <label>Date de naissance - jj/mm/aaaa</label>
                     <input type="text" id="birthday" formControlName="birthday">
+                    <div *ngIf="birthday.invalid && (birthday.dirty || birthday.touched)">
+                        <div *ngIf="birthday.errors?.['required']">La date de naissance est obligatoire</div>
+                        <div *ngIf="birthday.errors?.pattern">La date de naissance doit être au format JJ/MM/AAAA</div>
+                    </div>
                 </div>
                 <div class="field">
                     <label>Entreprise</label>
@@ -26,6 +36,9 @@
                 <div class="field">
                     <label>Email</label>
                     <input type="text" id="email" formControlName="email">
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                        <div *ngIf="email.errors?.pattern">Le format de votre email n'est pas valide</div>
+                    </div>
                 </div>
                 <div class="field">
                     <input type="submit" class="ui button" value="Modifier" >
