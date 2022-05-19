@@ -11,6 +11,9 @@ import { CarteComponent } from './carte/carte.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditFormComponent } from './edit-form/edit-form.component';
 import { FooterComponent } from './footer/footer.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressSpinnerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,6 +10,7 @@ import { StudentInfo } from '../studentInfo';
 })
 export class CarteComponent implements OnInit {
 
+  isLoaded:boolean = false;
   students : StudentInfo[] = [];
 
   constructor(private studentService : StudentService) { }
@@ -18,6 +19,7 @@ export class CarteComponent implements OnInit {
     this.studentService.getStudents().subscribe(
       response => {
         this.students = response;
+        this.isLoaded = true;
       }
     )
   }

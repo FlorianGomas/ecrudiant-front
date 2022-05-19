@@ -10,7 +10,7 @@ import { StudentInfo } from '../studentInfo';
 })
 export class EtudiantComponent implements OnInit {
   student:StudentInfo;
-
+  isLoaded:boolean = false;
   constructor(private route:ActivatedRoute, private studentService:StudentService) {}
 
   ngOnInit(): void {
@@ -18,6 +18,7 @@ export class EtudiantComponent implements OnInit {
     this.studentService.getStudent(studentId).subscribe(
       response => {
         this.student = response;
+        this.isLoaded=true;
       }
     )
   }

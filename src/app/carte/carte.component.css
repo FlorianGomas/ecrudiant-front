@@ -8,3 +8,7 @@
 .card:hover button {
     opacity: 1;
 }
+
+mat-spinner{
+    margin: 0 auto;
+}
