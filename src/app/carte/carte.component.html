@@ -1,6 +1,6 @@
 <div class="ui container">
-    <div class="student ui cards">
-        <div class="ui link centered card" *ngFor="let student of students" [routerLink]="['/etudiant', student.id]">
+    <div class="student ui cards three stackable" style="margin: 0 auto;">
+        <div class="ui link card" *ngFor="let student of students" [routerLink]="['/etudiant', student.id]">
             <div class="content">
                 <div class="header">
                     {{student.firstName}} {{student.lastName}}

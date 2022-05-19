@@ -10,6 +10,7 @@ import { RechercheComponent } from './recherche/recherche.component';
 import { CarteComponent } from './carte/carte.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditFormComponent } from './edit-form/edit-form.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EditFormComponent } from './edit-form/edit-form.component';
     FormulaireComponent,
     RechercheComponent,
     CarteComponent,
-    EditFormComponent
+    EditFormComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
