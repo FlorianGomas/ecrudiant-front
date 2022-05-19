@@ -1,6 +1,11 @@
 <div class="ui container">
     <div class="ui fluid card">
         <div class="content">
+            <div class="back-button right floated">
+                <button class="ui icon button" [routerLink]="['/etudiant/'+student.id+'/edit']">
+                    <i class="edit icon"></i>
+                </button>
+            </div>
             <div class="header">
                 {{student.firstName}} {{student.lastName}}
             </div>

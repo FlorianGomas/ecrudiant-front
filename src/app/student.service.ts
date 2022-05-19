@@ -27,4 +27,9 @@ export class StudentService {
     const headers = { 'content-type': 'application/json'};  
     return this.httpClient.post(environment.apiUrl + '/students',newStudent,{'headers': headers});
   }
+
+  updateStudent(modifiedStudent:StudentInfo, id:number): Observable<any> {
+    const headers = { 'content-type': 'application/json'};  
+    return this.httpClient.put(environment.apiUrl + '/students/'+ id ,modifiedStudent,{'headers': headers});
+  }
 }

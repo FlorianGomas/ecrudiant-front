@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StudentInfo } from '../studentInfo';
 import { StudentService } from '../student.service';
 
@@ -14,7 +14,7 @@ export class EditFormComponent implements OnInit {
   student = new StudentInfo();
   studentForm:FormGroup;
 
-  constructor(private route:ActivatedRoute, private studentService:StudentService, public fb: FormBuilder) {
+  constructor(private route:ActivatedRoute, private studentService:StudentService, public fb: FormBuilder, public router : Router) {
     this.studentForm = fb.group({
       lastName: new FormControl(),
       firstName: new FormControl(),
@@ -65,7 +65,21 @@ export class EditFormComponent implements OnInit {
   }
 
   submit(){
-   
+    const studentId = parseInt(this.route.snapshot.paramMap.get('id')!);
+    this.student.firstName = this.studentForm.get('firstName')?.value;
+    this.student.lastName = this.studentForm.get('lastName')?.value;
+    this.student.birthday = this.studentForm.get('birthday')?.value;
+    this.student.company = this.studentForm.get('company')?.value;
+    this.student.jobTitle = this.studentForm.get('jobTitle')?.value;
+    this.student.email = this.studentForm.get('email')?.value;
+    this.studentService.updateStudent(this.student, studentId).subscribe(
+      (val) =>{
+        console.log("valeur retournee : ", val);
+      },
+      response => {
+          console.log("PUT call in error", response);
+      });
+      this.router.navigate(['/etudiant/'+ this.student.id]);
   }
 
 }
