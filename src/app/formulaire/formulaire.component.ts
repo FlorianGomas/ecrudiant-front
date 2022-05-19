@@ -50,6 +50,7 @@ export class FormulaireComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   submit(){
     this.student.firstName = this.studentForm.get('firstName')?.value;
     this.student.lastName = this.studentForm.get('lastName')?.value;
