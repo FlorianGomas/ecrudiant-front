@@ -3,30 +3,30 @@
         <div class="content">
             <h1>{{student.firstName}} {{student.lastName}}</h1>
             <form  [formGroup]="studentForm" method="post" class="ui form" id="formModif" (ngSubmit)="submit()">
-                <fieldset>
-                    <legend>Prénom</legend>
+                <div class="field">
+                    <label>Prénom</label>
                     <input type="text" id="firstName" formControlName="firstName">
-                </fieldset> 
-                <fieldset>
-                    <legend>Nom</legend>
+                </div> 
+                <div class="field">
+                    <label>Nom</label>
                     <input type="text" formControlName="lastName">
-                </fieldset> 
-                <fieldset>
-                    <legend>Date de naissance</legend>
+                </div> 
+                <div class="field">
+                    <label>Date de naissance - jj/mm/aaaa</label>
                     <input type="text" id="birthday" formControlName="birthday">
-                </fieldset>
-                <fieldset>
-                    <legend>Entreprise</legend>
+                </div>
+                <div class="field">
+                    <label>Entreprise</label>
                     <input type="text" id="company" formControlName="company"> 
-                </fieldset>
-                <fieldset>
-                    <legend>Poste</legend>
+                </div>
+                <div class="field">
+                    <label>Poste</label>
                     <input type="text" id="jobTitle" formControlName="jobTitle">
-                </fieldset>
-                <fieldset>
-                    <legend>Email</legend>
+                </div>
+                <div class="field">
+                    <label>Email</label>
                     <input type="text" id="email" formControlName="email">
-                </fieldset>
+                </div>
             </form>
         </div>    
     </div>
