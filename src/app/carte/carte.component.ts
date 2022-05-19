@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StudentService } from '../student.service';
 import { StudentInfo } from '../studentInfo';
 
@@ -12,7 +13,7 @@ export class CarteComponent implements OnInit {
   isLoaded:boolean = false;
   students : StudentInfo[] = [];
 
-  constructor(private studentService : StudentService) { }
+  constructor(private studentService : StudentService, public router : Router) { }
 
   ngOnInit(): void {
     this.studentService.getStudents().subscribe(
@@ -26,8 +27,16 @@ export class CarteComponent implements OnInit {
   deleteButton(id : number){
     this.isLoaded = false;
     this.studentService.deleteStudent(id).subscribe();
-    window.location.reload();
-    this.ngOnInit();
+    this.reloadCurrentRoute();
+  }
+
+  reloadCurrentRoute() {
+    let currentUrl = this.router.url;
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+        this.router.navigate([currentUrl]);
+        console.log(currentUrl);
+        this.ngOnInit();
+    });
   }
 
 }
