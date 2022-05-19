@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { StudentService } from '../student.service';
 import { StudentInfo } from '../studentInfo';
 
@@ -25,6 +24,7 @@ export class CarteComponent implements OnInit {
   }
 
   deleteButton(id : number){
+    this.isLoaded = false;
     this.studentService.deleteStudent(id).subscribe();
     window.location.reload();
     this.ngOnInit();
