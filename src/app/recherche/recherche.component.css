@@ -1,9 +1,11 @@
 h1 {
     padding: 1em;
-    background-color: crimson;
+    background: rgb(0, 2, 42);
+    background: linear-gradient(35deg, rgba(0, 2, 42, 1) 0%, rgba(0, 0, 84, 1) 42%, rgba(3, 3, 96, 1) 49%, rgba(176, 0, 121, 1) 100%);
     color: ghostwhite;
     margin: 0;
 }
+
 .menu {
     margin-top: 0 !important;
     width: 100% !important;
