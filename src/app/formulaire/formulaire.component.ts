@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { StudentService } from '../student.service';
 import { FormBuilder } from '@angular/forms';
 import { StudentInfo } from '../studentInfo';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulaire',
@@ -12,7 +13,7 @@ import { StudentInfo } from '../studentInfo';
 export class FormulaireComponent implements OnInit {
   studentForm:FormGroup;
   student = new StudentInfo();
-  constructor(public fb: FormBuilder, private studentService:StudentService) { 
+  constructor(public fb: FormBuilder, private studentService:StudentService, public router : Router) { 
     this.studentForm = fb.group({
       lastName: new FormControl(),
       firstName: new FormControl(),
@@ -65,5 +66,6 @@ export class FormulaireComponent implements OnInit {
       response => {
           console.log("POST call in error", response);
       });
+      window.location.reload();
   }
 }
