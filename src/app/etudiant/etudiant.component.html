@@ -10,7 +10,7 @@
                 {{student.firstName}} {{student.lastName}}
             </div>
             <div class="description">
-                {{student.jobTitle}} chez {{student.company}}
+                {{student.jobTitle}} <span *ngIf="student.jobTitle && student.company">chez</span> {{student.company}}
             </div>
         </div>
         <div class="content">

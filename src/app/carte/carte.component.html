@@ -7,7 +7,7 @@
                     <button class="ui icon basic button right floated" (click)="$event.stopPropagation();deleteButton(student.id)"><i class="ui icon trash alternate"></i></button>
                 </div>
             </div>
-            <div class="content">{{student.jobTitle}} chez {{student.company}}</div>
+            <div class="content">{{student.jobTitle}} <span *ngIf="student.jobTitle && student.company">chez</span> {{student.company}}</div>
         </div>
     </div>
 </div>
