@@ -27,11 +27,14 @@
                     <legend>Email</legend>
                     <input type="text" id="email" formControlName="email">
                 </fieldset>
+                <div class="field">
+                    <input type="submit" class="ui button" value="Modifier" >
+                </div>
             </form>
         </div>    
     </div>
     <div class="back-button">
-        <button class="ui icon button" [routerLink]="['/etudiants']">
+        <button class="ui icon button" [routerLink]="['/etudiant/'+student.id]">
             <i class="left arrow icon"></i>
         </button>
     </div>
